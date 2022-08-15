@@ -1,0 +1,134 @@
+//Variables
+Var a : Int = 13 // var keyword for mutable variables
+Val a : Int = 13 // val keyword for immutable variables
+var d = 12.3 // variable data type is automatically assigned to be double
+var d = 12.3f // variable data type is assigned to be float
+
+
+// multi-expression
+//Semi-colon or new line can be used as a delimiter
+val x = {val a: Int = 100; val b:Int = 200; a+b} 
+
+
+
+//lazy variable
+lazy val x = 500
+
+//operators in scala 
+//int to binary function
+54.toBinaryString
+54.tohexString
+54.toOctalString
+
+
+//to know about range of the datatype i.e, Int
+Int.MinValue
+Int.MaxValue
+
+
+//Math library
+Math.Random
+Math.PI
+Math.sqrt(16)
+
+
+//String operators
+val s: String = "hello"
+s(0) -- indexing
+s.indexOf(e)
+s.lastIndexOf(l)
+s.substring(2)
+s.substring(2,4)
+s substring 2
+s substring (2,4)
+s.splitAt(2)
+s.trim
+s.trim.length
+s.charAt(2)
+val s1: String ="hi"
+s.compareTo(s1)
+val s2: String ="Hi"
+s2.compareToIgnoreCase(s1)
+s.concat(s1)
+//for capitalization
+s.toupperCase()
+s.replaceAll("Sa","la")
+
+//Conditional Operators
+
+val age = 18
+val status = if(age>=18) "Adult" else "Child"
+print(status)
+
+var status = ""
+if(age>=18){
+status = "Adult"
+} else {
+status = "Child"
+}
+
+//taking Input
+import io.StdIn._
+{ 
+print("Enter a number")
+val num = readInt()
+print(num *2)
+}
+
+//Boolean logic
+val age = readInt()
+val allowed = if (age< 18 || age>60) "No" else "Yes"
+print(allowed)
+
+val allowed = if (age> 18 && age<60) "Yes" else "No"
+print(allowed)
+
+//division by zero exception rectification
+
+var n= readInt()
+var d = readInt()
+val q = d>0 && n/d>=10
+print(q)
+
+
+//Nesting ifs
+import io.StdIn._
+val Order = readLine()
+val Size = readLine()
+val Cost = if (Order == "food"){
+if (Size.toUpperCase == "S"){ 30.0}
+else if (Size.toUpperCase == "M"){ 45.0}
+else if (Size.toUpperCase == "L"){ 60.0}}
+print(Cost)
+
+//Bitwise Arithmetic
+print(123 & 126)
+print(7|33)
+print(7^33)
+print(~7)
+print(1<<3)
+print(34>> 1)
+
+//while loop
+
+var i = 0
+while(i<10){
+  println(i)
+  i = i+1
+}
+
+//do-while loop
+var a = 10;
+do {
+         println( "Value of a: " + a );
+         a = a + 1;
+      }
+      while( a < 20 )
+
+//for loop
+
+for( w <- 0 to 10)
+      {
+        println(w)
+      }
+

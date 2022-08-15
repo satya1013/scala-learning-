@@ -1,0 +1,103 @@
+//Questions
+//1.take a name and get first and last name separatley
+val name = "Satya Kumari"
+val si = name.indexOf(" ")
+val(first, last) = name.splitAt(si)
+last.trim +","+ first
+println(s"${last.trim},$first") --f string
+
+
+
+//2.function for square of a number
+def square(x:Double) = x*x
+print(square(2))
+print(square(5+4))
+print(square(square(4)))
+
+
+//3.function for squareroot of a number
+//newton's method
+def abs(x: Double) = if (x > 0) x else -x
+
+def sqrt(x: Double) = {
+    def sqrtIter(guess: Double): Double =
+      if (isAccurate(guess)) guess
+      else sqrtIter(improve(guess))
+
+    def isAccurate(guess: Double) =
+      abs(guess * guess - x) / x < 0.001
+
+    def improve(guess: Double) =
+      (guess + x / guess) / 2
+
+    sqrtIter(1.0)
+  }
+print(sqrt(9))
+
+
+//4.function for squareroot of a number
+def abs(x: Double) = if (x > 0) x else -x
+
+def sqrt(x: Double) = {
+    def sqrtIter(guess: Double): Double =
+      if (isAccurate(guess)) guess
+      else sqrtIter(improve(guess))
+
+    def isAccurate(guess: Double) =
+      abs(guess * guess - x) / x < 0.001
+
+    def improve(guess: Double) =
+      (guess + x / guess) / 2
+
+    sqrtIter(1.0)
+  }
+print(sqrt(9))
+
+//5. function for gcd
+def gcd(a: Int, b:Int) :Int = 
+   if (b == 0) {a }else gcd(b, a%b)
+print(gcd(16,24))
+
+//6. function for factorial
+def factorial(a: Int) :Int = 
+   if (a == 0) {1 }else (a * factorial(a-1))
+print(factorial(5))
+
+//7. A positive number is considered ugly whose prime factors are only 2, 3 and 5. 1 is considered to be ugly number
+def isUgly(num: Int): Boolean = {
+  if (num <= 0) false
+  else if (num == 1) true
+  else if (num % 2 == 0) isUgly(num / 2)
+  else if (num % 3 == 0) isUgly(num / 3)
+  else if (num % 5 == 0) isUgly(num / 5)
+  else false
+}
+
+//8.Your task is to scan two numbers,  and  from STDIN, and print the sum on STDOUT.
+import io.StdIn._
+object Solution {
+
+    def main(args: Array[String]) {
+        var a: Int = readInt()
+        var b: Int = readInt()
+        def sumab = a+b
+        println(sumab)
+    }
+}
+
+//9. Print "Hello World"  amount of times. The input portion will be handled automatically
+
+object Solution extends App {
+ 
+   val a=0;
+   def f(n: Int) = for (a <- 1 to n)
+   println("Hello World")
+
+  var n = scala.io.StdIn.readInt
+  f(n)
+}
+
+//10. Given a list, repeat each element in the list  amount of times.
+
+def f(num:Int,arr:List[Int]):List[Int] = 
+arr.flatMap(List.fill(num)(_))
