@@ -1,0 +1,90 @@
+1.   What are the types of the following expressions?
+•   1-   int
+•   1.7  Double
+•   1.0- Double
+•   ’h’
+•   "hi"- String
+•   5/8- Int
+•   1+0.5- Double
+•   7*0.5- Double
+•   "hi".length- Int
+
+
+//4.Write a script that will calculate how far a projectile will go given a launch speed and an angle ignoring friction.
+ Assume that the projectile is launched from ground level with a certain speed in m/s and at a certain angle in radians.
+ Use the fact that acceleration due to gravity is 9.8m/s2
+
+//sin(2θ)v2/g,
+//(v = v0 − at)
+import scala.math._
+def dist(v: Double, a: Double): Double = {
+ val g = 9.8
+ val hs = v* cos(a)
+ val vs = v*sin(a)
+ //time taken for vertical distance to be 0
+ //v = gt
+ val t = vs/g 
+ //horizontal distance = 2t * hors
+ //var hord = hors*hors * sin(2*a)/g
+ var hd = v*v*sin(2*a)/g
+ hd
+ }
+print(dist(40, 0.87))
+
+//5.
+•     toUpperCase
+•     trim
+•     substring – This method takes two Int arguments.
+•     replace – This method can be called with two Char arguments or two String arguments.
+
+
+var str:String = " Satya"
+str.toUpperCase
+str.trim
+str.substring(2,4)
+str.replace(" ", "")
+
+//6.
+ Using Scala as a calculator, figure out how much you must make each year to bring home
+  $100,000 assuming a 27% tax rate.
+
+
+val inhand = 100000
+//tax = 27
+//total - 0.27 * total = inhand 
+//0.73 * total = inhand
+val total = inhand/0.73
+print(total)
+
+
+//7.
+•   Assume you have a variable called age. Tell if the person is old enough to legally drink.
+
+
+val age = 18
+val status = if (age >= 18) "Can drink"
+else "can not drink"
+print(status)
+
+
+•   Given a height in inches, tell if a person can ride an amusement park ride that requires riders
+to be between 48” and 74”
+
+val height = 36
+val status = if (height >= 48 && height < 74 ) "Can ride"
+else "Cannot ride"
+print(status)
+
+//8.
+import io.StdIn._
+val str = readLine()
+val str1 = str.reverse
+val result = if (str.compareTo(str1)==0){"The word is a palindrome"}
+else "The word is not a palindrome"
+print(result)
+
+
+
+
+
+
