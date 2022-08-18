@@ -1,0 +1,204 @@
+1. https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/is-zoo-f6f309e7/
+object MainObject {  
+   def main(args: Array[String]) = {  
+        functionExample   
+          
+    }  
+    def functionExample:Unit = {  
+         var name = scala.io.StdIn.readLine()  
+         val i = name.indexOf('o')
+         val (zzs,oos) = name.splitAt(i)
+         print(if (oos.length() == 2* zzs.length())"Yes" else "No")
+    }  
+}  
+
+2. https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/divisible-or-not-81b86ad7/
+object MainObject { 
+    def main(args: Array[String]) = { 
+        var n = scala.io.StdIn.readInt() 
+        val s = scala.io.StdIn.readLine() 
+        val a: Array[Int] = s.split(" ").map(_.toInt)
+
+    
+        functionExample(n, a)
+          
+    }  
+   
+    def functionExample(Num:Int, ls:Array[Int]):Unit = {  
+        print(if (ls(ls.length-1)%10 == 0 ) "Yes"else "No")
+    }  
+ }
+3. https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/special-number-9-a0cda359/
+object MainObject { 
+    def main(args: Array[String]) = { 
+        var t = scala.io.StdIn.readInt()
+        for (i <- 0 to (t-1)) {
+            var n = scala.io.StdIn.readInt() 
+        println(func(n))
+        }
+    }  
+   
+   def func(n:Int):Int = {  
+       	var sum = 0
+       	var n1 = n
+       	var temp = n
+        while(n1!=0)
+     	{
+	      sum=sum+n1%10;
+	      n1=n1/10;
+	  
+	     }  
+        var num = if(sum%4 == 0)  temp
+        else {func(temp + (4-sum%4))}
+      num
+ }
+        
+    
+ }
+4. https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/excursion-2d080f3a/
+object MainObject { 
+    def main(args: Array[String]) = { 
+        var t = scala.io.StdIn.readInt()
+        for (i <- 0 to (t-1)) { 
+           val s = scala.io.StdIn.readLine() 
+           val a: Array[Int] = s.split(" ").map(_.toInt)
+           println(functionExample(a(0), a(1),a(2)))
+          
+    }  
+   
+    def functionExample(N:Int, M:Int, K:Int ):Int = {  
+        var rooms:Int = 0
+        if (N%K == 0) rooms = N/K
+        else{rooms = (N/K)+1}
+         if (M%K == 0) rooms = rooms + M/K
+        else{rooms = rooms + (M/K)+1}
+        rooms
+    }  
+    }}
+5.  Write a program to print following :-
+a.    
+**********
+**********
+**********
+**********
+
+for (i<- 0 to 2){
+  for ( j <-0 to 9){
+    print("*")
+  
+  };
+  println()}
+
+b. 
+*
+**
+***
+****
+*****
+
+for (i<- 0 to 4){
+  for ( j <-0 to i){
+    print("*")
+  
+  };
+  println()}
+
+6. Write a Scala program to check whether the first two characters present at the end of a given string. 
+Example:
+    Input string : educated
+    output:  true
+    Input string : ABCDEFBA
+    output:  false
+
+7. Write a Scala program to calculate the sum of the last 3 elements of an array of integers. If the array length is less than 3 then return the sum of the array. Return 0 if the array is empty.
+
+import io.StdIn._
+var s = readLine()
+val s1 = s.substring(0,2)
+//println(s1)
+val s2= s.substring((s.length-2),(s.length))
+
+val result = s1.equals(s2)
+println(result)
+
+8. Write a Scala program to find maximum product of two integers in a given array of integers.
+    Sample Input:
+    nums = { 2, 3, 5, 9, 7, 5, 8, 5 }
+    Sample Output:
+    Pair is (9, 8), Maximum Product: 72
+
+var s = Array(2, 3, 5, 9, 7, 5, 8, 5 )
+var max = s(0)
+var ma = s(0)
+for(i<-1 to (s.length - 1)){
+  if (s(i) > max) max =s(i);
+}
+
+for(i<-1 to (s.length - 1))
+{
+ if ((s(i) <   max) && (s(i) > ma)){ma = s(i)
+ }
+ }
+ val max_prod = max*ma
+println(s"Pair is ($max, $ma), Maximum Product: $max_prod")
+
+
+9. Write a Scala program to check if a given string is palindrome or not.
+example:-
+ Input = '123321'
+ Output = True
+ Input = 'racecars'
+ Output = False
+
+var string = "peep"
+if (string.reverse == string) println("True")
+else println("False")
+
+ 
+10. Write a program to check if a number is the power of 2 or not.
+import io.StdIn._
+var n = readInt()
+def p2_check(n1:Int):Unit={
+  var n = n1
+  if (n%2 !=0) println ("Not a power of 2")
+  else {
+    if (n==2){ println ("Power of 2")}
+    else{
+        n = n/2
+        p2_check(n)
+        }
+  }
+}
+p2_check(6)
+
+
+11. https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/lunch-boxes-019bf2a5/
+
+object MainObject {  
+   def main(args: Array[String]) = { 
+       import io.StdIn._
+       import scala.util.control.Breaks._
+       val t = readInt()
+       for (te<-0 to (t-1)){ 
+       val s = readLine()
+       val a: Array[Int] =  s.split(" ").map(_.toInt)
+       val s1 = readLine()
+       val school_boxes : Array[Int] =  s1.split(" ").map(_.toInt) 
+        println(functionExample(a,school_boxes ))
+       }    
+    }  
+    def functionExample(a: Array[Int], arr: Array[Int]):Int= { 
+        var arr1 = arr.sortWith(_<_)
+        var sum = 0
+        var count:Int = 0
+
+        for(i<- 0 to (a(1)-1)) {
+          if (a(0)- sum >=  arr1(i)){
+               sum = sum +arr1(i)
+               count = count +1
+        
+           }
+           }
+      return count
+}  
+}

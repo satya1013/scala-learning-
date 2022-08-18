@@ -1,0 +1,50 @@
+Function syntax 
+--4 ways 
+ def s(c:Int):Int= {x*x;}
+def s(c:Int):Int= { return x*x;}
+ def s(c:Int):Int= x*x;
+ def s(c:Int)= x*x;
+
+-- operators sign can be function name in scala 
+def +(x:int, y:int):int{x+y;}
+
+--Anonymous function 
+var add = (x:int, y:int) => x+y
+
+--Higher order function take function and return function as an argument
+//syntax 
+def hf(x:int, y:int, f:(double,double=> double):double{f(x+y)}
+val s = hf(5,3,(x,y)=>x+y);
+//for three arduments
+def hf(x:int, y:int, f:(double,double=> double):double{f(f(x+y),z)}
+val s = hf(5,3,7,(x,y)=>x max y);
+--more comfortable way
+val s = hf(5,3,7,(x,y)=>_max _);
+--closures are the functions which uses one or more varibales which are declared outside of function 
+var number = 10
+val add = (x: Int)=> x+number;
+--if the variable outside has vae keyword then the closure is impure, else if the keyword of variable is val then the closure is pure.
+
+// Partial functions 
+When a function is not able to produce a return for every single
+ variable input data given to it then that function is termed as Partial function
+
+
+ val squareroot = new PartialFunction[Double,Double]{ 
+ | def apply(x:Double) = Math.sqrt(x)                                                                                    
+| def isDefinedAt(x:Double) = x > 0                                                                                     
+| }                                                                                                                                                                                                                                                                                                  
+scala> squareroot.isDefinedAt(-9)                                                                                      
+ val res0: Boolean = false                                                                                                                 
+scala> squareroot.isDefinedAt(9)                                                                                       
+ val res1: Boolean = true 
+
+ val squareroot : PartialFunction[Double,Double]{ 
+ case d: Double if d> 0 => Math.sqrt( d)                                        
+| }  
+
+list.collect(squareroot)                                                                                
+
+
+                                                                                                        
+
