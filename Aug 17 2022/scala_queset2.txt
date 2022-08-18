@@ -49,7 +49,7 @@ object MainObject {
 	  
 	     }  
         var num = if(sum%4 == 0)  temp
-        else {func(temp + (4-sum%4))}
+        else {func(temp + 1)}
       num
  }
         
@@ -110,7 +110,6 @@ Example:
     Input string : ABCDEFBA
     output:  false
 
-7. Write a Scala program to calculate the sum of the last 3 elements of an array of integers. If the array length is less than 3 then return the sum of the array. Return 0 if the array is empty.
 
 import io.StdIn._
 var s = readLine()
@@ -120,6 +119,20 @@ val s2= s.substring((s.length-2),(s.length))
 
 val result = s1.equals(s2)
 println(result)
+
+7. Write a Scala program to calculate the sum of the last 3 elements of an array of integers. If the array length is less than 3 then return the sum of the array. Return 0 if the array is empty.
+
+val arr = Array(1,2,3,4)
+val n = arr.length
+var sum =0;
+ if (n==0){ sum =0}
+ else if (n<3 && n!=0){
+ sum = arr.sum}
+else if (n>= 3){
+   sum = arr(n-1)+arr(n-2)+arr(n-3)
+}
+print(sum)
+
 
 8. Write a Scala program to find maximum product of two integers in a given array of integers.
     Sample Input:
