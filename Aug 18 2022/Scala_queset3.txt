@@ -1,0 +1,157 @@
+//q.5 b and e part is left to do
+1. Write a program to print all the prime numbers between two given numbers by creating a function.
+
+
+def prime_checker(a:Int, b:Int):Unit = {
+  
+  for (i<- a to b){
+    var flag = 0 ;
+    for (j<-2 to i/2){
+      
+      if (i%j ==0){
+        
+        flag = flag+1
+      }
+    }
+    if (flag == 0) println(i)
+
+  }
+}
+prime_checker(1, 10)
+
+
+2. Write a Program to print the Fibonacci sequence of a number.
+
+
+def fibonacci(n:Int):Int = {
+  if (n==0) 0
+  else if (n==1 || n==2) 1
+  else fibonacci(n-1) + fibonacci(n-2)
+  
+}
+  
+print(fibonacci(8))
+
+4. Given a array of N positive integers and an integer X. The task is to find the frequency of X in Array.
+Input:
+N = 5
+vector = {1, 1, 1, 1, 1}
+X = 1
+Output: 
+5
+Explanation: Frequency of 1 is 5.
+
+
+var l1= List(1,1,1,1,1)
+l1.groupBy(x => x).map(x => (x._1,x._2.length)).values.foreach(println)
+
+
+5. Write the code using function in scala for below problems:-
+	a. https://practice.geeksforgeeks.org/problems/peak-element/1
+
+
+
+def peakElement(arr : Array[Int], n: Int): Int = {
+  var index = -1
+  for (i<- 0 to n-1){
+     if (i == 0){
+      if (arr(1)<arr(0)){
+         index = 0
+        }
+    }
+    else if  (i == n-1){
+      if (arr(i)> arr(i-1)){
+         index = (n-1)
+        }
+    }
+    else {
+      if (arr(i)>arr(i+1) && arr(i-1)<arr(i)){
+        
+         index = i
+      }
+    }
+      
+    
+  
+
+      
+    }
+  index
+   
+}
+println(peakElement(Array(7,4, 9, 2, 1), 5))
+	b. https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1
+
+	c. https://practice.geeksforgeeks.org/problems/reverse-an-array/0
+
+
+def rev(arr: Array[Int], n: Int): Array[Int] = {
+  var arr1 = new Array[Int](n)
+  for (i<- 0 to n-1){
+    
+    arr1(i) = arr(n-1-i)
+  }
+  arr1
+}
+for (j<- rev(Array(1,2,3,4), 4)){print(j + " ")}
+
+
+	d. https://practice.geeksforgeeks.org/problems/sort-the-array0055/1 (using bubble sort, insertion sort and selection sort)
+	
+
+        e. https://practice.geeksforgeeks.org/problems/longest-common-prefix-in-an-array5129/1
+ 
+
+ def co_pr(arr: Array[String], n :Int): String = {
+    var s = arr(0)
+    for (i <- arr){
+      
+      if (s.length > i.length) {s = i}
+    }
+    for (i <- arr){
+      if (i.contains(s)== false){
+        while(i.contains(s)== false){
+         s = s.substring(0, s.length-1)
+         
+         
+        
+  
+      
+      }
+    }
+    
+  }
+  s
+  }
+  print(co_pr(Array( "geeks", "geek", "geezer", "geeksforgeeks"), 4))
+	
+
+        f. https://practice.geeksforgeeks.org/problems/closest-strings0611/1
+
+
+
+import scala.util.control.Breaks._
+def min_dist(arr:Array[String], word1: String, word2: String):Int={
+  var dist = -1
+ breakable
+ {
+  for (i<-arr){
+    if (i == word1){
+      dist = 1
+    }
+    else if (i != word1 && i!= word2){
+      dist = dist +1
+    }
+    else if (i== word2){
+      break;
+    }
+    
+  }
+ 
+}
+ dist
+}
+print(min_dist(Array( "the", "quick", "brown", "fox", 
+     "quick"), "the", "fox"))
+
+
