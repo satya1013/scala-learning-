@@ -1,0 +1,171 @@
+################################################################################################################################################
+1: Create a Class with instance attributes
+Write a Scala program to create a Vehicle class with max_speed and mileage instance attributes.
+
+
+class Vehicle (max_speed: Int , mileage: Int ){
+  
+
+}
+
+
+#####################################################################################################################################################
+2: Create a child class Bus that will inherit all of the variables and methods of the Vehicle class
+
+	class Vehicle(name : String, max_speed : Int , mileage : Int ){}
+
+Create a Bus object that will inherit all of the variables and methods of the parent Vehicle class and display it.
+
+Expected Output:
+	Vehicle Name: School Volvo Speed: 180 Mileage: 12
+
+
+class Vehicle( var name : String, var max_speed : Int , var mileage : Int ){}
+class Bus( name :String, max_speed:Int, mileage:Int) extends Vehicle(name, max_speed, mileage)
+var b = new  Bus ("School Volvo Speed", 180, 12)
+print(s"Vehicle Name: ${b.name} Speed: ${b.max_speed} Mileage: ${b.mileage}")
+
+
+
+
+
+######################################################################################################################################################
+3: Create a Bus class that inherits from the Vehicle class. Give the capacity argument of Bus.seating_capacity() a default value of 50.
+Use the following code for your parent Vehicle class.
+
+class Vehicle(name : String, max_speed : Int , mileage : Int ){
+	 def seating_capacity(capacity : String){
+		print("The seating capacity of a"+ {name} + " is "+{capacity}+" passengers")
+	 }
+}
+
+Expected Output:
+	The seating capacity of a bus is 50 passengers
+
+
+class Vehicle( var name : String, var max_speed : Int , var mileage : Int ){
+  def seating_capacity(capacity : String){
+		print("The seating capacity of a"+ {name} + " is "+{capacity}+" passengers")
+	 }
+}
+class Bus( name :String, max_speed:Int, mileage:Int) extends Vehicle(name, max_speed, mileage){
+  override def seating_capacity(capacity : String = "50"){
+		print("The seating capacity of a "+ {name} + " is "+{capacity}+" passengers")
+	 }
+}
+var b = new  Bus ("School Volvo Speed", 180, 12)
+b.seating_capacity()
+
+
+#####################################################################################################################################################
+4. Define a property that must have the same value for every class instance (object)
+Define a class attribute”color” with a default value white. I.e., Every Vehicle should be white.
+
+Use the following code for this exercise.
+
+class Vehicle(name : String, max_speed : Int , mileage : Int ){
+
+}
+
+class Bus extends Vehicle{
+}
+
+class Bus extends Vehicle{
+}
+
+Expected Output:
+	Color: White, Vehicle name: School Volvo, Speed: 180, Mileage: 12
+	Color: White, Vehicle name: Audi Q5, Speed: 240, Mileage: 18
+
+class Vehicle( var name : String, var max_speed : Int , var mileage : Int, val color : String= "White")
+class Bus( name :String, max_speed:Int, mileage:Int) extends Vehicle(name, max_speed, mileage)
+class car(name :String, max_speed:Int, mileage:Int) extends Vehicle(name, max_speed, mileage)
+var b = new  Bus ("School Volvo Speed", 180, 12)
+print(s" Color: ${b.color} Vehicle Name: ${b.name} Speed: ${b.max_speed} Mileage: ${b.mileage}")
+var c = new  car ("Audi Q5", 240, 18)
+print(s" Color: ${c.color} Vehicle Name: ${c.name} Speed: ${c.max_speed} Mileage: ${c.mileage}")
+
+	
+####################################################################################################################################################################################
+5. Create a Bus child class that inherits from the Vehicle class. The default fare charge of any vehicle is seating capacity * 100. If Vehicle is Bus instance, we need to add an extra 10% on full fare as a maintenance charge. So total fare for bus instance will become the final amount = total fare + 10% of the total fare.
+
+Note: The bus seating capacity is 50. so the final fare amount should be 5500. You need to override the fare() method of a Vehicle class in Bus class.
+
+Use the following code for your parent Vehicle class. We need to access the parent class from inside a method of a child class.
+
+class Vehicle(name : String, capacity : Int , mileage : Int ){
+	def fare(): Int = 
+   {
+      return capacity*100
+   }
+}
+class Bus extends Vehicle{
+ // write your code here
+}   
+
+val School_bus = new Bus("School Volvo", 12, 50)
+print("Total Bus fare is:" + School_bus.fare())
+
+Expected Output:
+	Total Bus fare is: 5500
+
+
+
+class Vehicle(name : String, capacity : Int , mileage : Int ){
+  def fare(): Int = 
+   {
+      return capacity*100
+   }
+}
+class Bus( name :String, capacity : Int , mileage:Int) extends Vehicle(name, capacity,mileage){
+  override def fare(): Int = 
+   {
+      return capacity*100 + capacity*10
+   }
+}
+var School_bus = new  Bus ("School Volvo", 50, 12)
+print("Total Bus fare is:" + School_bus.fare())
+
+	
+##################################################################################################################################################################################
+6. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5units by creating a class named 'Triangle' without any parameter in its constructor.
+
+
+
+
+import math._
+class Triangle {
+  var sideA = 3
+  var sideB = 4
+  var sideC = 5
+  val area = math.sqrt(((sideA + sideB + sideC)*( sideB + sideC -  sideA )*
+  ( sideA + sideC -  sideB)*( sideA + sideB -  sideC)))/4
+  
+  val perimeter =  (sideA + sideB + sideC)
+  
+}
+
+val tri = new Triangle()
+print(tri.perimeter)
+###################################################################################################################################################################################
+7. Print the average of three numbers entered by user by creating a class named 'Average'having a method to calculate and print the average.
+
+
+import io.StdIn._
+class Average{
+  
+  
+  def cal_avg: Int = 
+   {
+  val a = readInt()
+  val b = readInt()
+  val c = readInt()
+     val avg = (a+b+c)/3
+      return avg
+   }
+  
+}
+   
+  val a = new Average
+print(a.cal_avg)
+
